@@ -46,7 +46,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
             //Guardar la sesión
             $app->save_session($user);
             //Redirección a la página principal del proyecto
-            echo "<script language=\"javascript\">window.location.href=\"liststudents.php\"</script>";
+            echo "<script language=\"javascript\">window.location.href=\"aula.php\"</script>";
         }else{
             echo "<p>Usuario incorrecto</p>";
 

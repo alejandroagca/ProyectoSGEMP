@@ -17,7 +17,6 @@
             <meta name=\"title\" content=\"$title\">
             <meta name=\"description\" content=\"Descripción de la WEB\">  
             <link rel=\"stylesheet\" href=\"../css/bootstrap.css\">
-            <script src=\"../js/jquery-3.3.1.js\"></script>
             </head>
             <body>    
             <header>
