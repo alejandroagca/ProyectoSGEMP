@@ -5,7 +5,12 @@
     $app->validateSession();
     App::print_head("Gestión aula");
     App::print_nav();
-    $resultsset = $app->getAbsences();
+    if(!isset($_GET['idStudent'])){
+    $resultsset = $app->getDao()->getAbsences();
+    }else{
+        $resultsset=$app->getDao()->getAbsencesFrom($_GET['idStudent']);
+    }
+    
     if(!$resultsset)
         echo "<p>Error al conectar al servidor: ".$app->getDao()->error."</p>";
     else{
@@ -24,12 +29,8 @@
             echo "</tr>";
             echo "</thead>";
             echo "<tbody>";
-            $flag = true;
-            if(isset($_GET['idStudent'])){
-                $flag = false;
-            }
+
             foreach ($list as $fila) {
-                if($flag || $_GET['idStudent'] == $fila['id_student']){
                     echo "<tr>";
                     echo "<td scope=\"row\">".$fila['id_student']."</td>".
                     "<td scope=\"row\">".$fila['id_subject']."</td>".
@@ -37,7 +38,6 @@
                     "<td scope=\"row\">".$fila['justified']."</td>".
                     "<td scope=\"row\">".$fila['description']."</td>";
                     echo "</tr>";
-                }
             }
             
             echo "</tbody>";

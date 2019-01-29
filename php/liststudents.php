@@ -5,7 +5,7 @@
     $app->validateSession();
     App::print_head("Gestión aula");
     App::print_nav();
-    $resultsset = $app->getStudents();
+    $resultsset = $app->getDao()->getStudents();
     // 1. Error con la BD
     if(!$resultsset)
         echo "<p>Error al conectar al servidor: ".$app->getDao()->error."</p>";

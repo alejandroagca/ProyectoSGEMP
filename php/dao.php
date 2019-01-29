@@ -64,8 +64,12 @@ class Dao{
 
     function getAbsencesFrom($idStudent){
         try{
-            $sql = "SELECT * FROM ".TABLE_ABSENCE." WHERE ".COLUMN_ID_STUDENT. " = ".$idStudent;
-            $resultset = $this->conn->query($sql);
+            $sql = "SELECT * FROM ".TABLE_ABSENCE." WHERE ".COLUMN_ID_STUDENT. " = :idStudent";
+            //$resultset = $this->conn->query($sql);
+            $resultset = $this->conn->prepare($sql);
+            $resultset->bindParam(':idStudent', $idStudent);
+            //$resultset->execute(array(':idStudent' =>$idStudent));
+            $resultset->execute();
             return $resultset;
         }catch(PDOException $e){
             $this->error=$e->getMessage();
