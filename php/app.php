@@ -39,13 +39,7 @@
                     <a class=\"nav-link\" href=\"listabsence.php\">Listado ausencias<span class=\"sr-only\">(current)</span></a>
                 </li>
                 <li class=\"nav-item active\">
-                    <a class=\"nav-link\" href=\"#\">Alta ausencia <span class=\"sr-only\">(current)</span></a>
-                </li>
-                <li class=\"nav-item active\">
-                    <a class=\"nav-link\" href=\"#\">Eliminar ausencia<span class=\"sr-only\">(current)</span></a>
-                </li>
-                <li class=\"nav-item active\">
-                    <a class=\"nav-link\" href=\"logout.php\">Logout<span class=\"sr-only\">(current)</span></a>
+                    <a class=\"nav-link\" href=\"consultabsence.php\">Consultar ausencia<span class=\"sr-only\">(current)</span></a>
                 </li>
                 </ul>
             </div>
@@ -110,7 +104,7 @@
         /**
          *  Función que devuelve todos los estudiantes dados de alta
          */
-        function getStudents(){
+        /*function getStudents(){
             return $this->dao->getStudents();
         }
 
@@ -120,6 +114,6 @@
 
         function getAbsencesFrom($idStudent){
             return $this->dao->getAbsencesFrom($idStudent);
-        }
+        }*/
     }
 ?>
